@@ -9,7 +9,7 @@ function getHumanChoice(){
 
    if(choice === "ROCK" ||
       choice === "PAPER" ||
-      choice === "PAPER"
+      choice === "SCISSORS"
    ) {
       return choice
    } else {
@@ -24,18 +24,24 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
    if (humanChoice === "ROCK" && computerChoice === "SCISSORS") {
+      humanScore++;
       console.log("You win, Rock beat Scissors");
    } else if(humanChoice === "SCISSORS" && computerChoice === "ROCK"){
+      computerScore++;
       console.log(`You lose, ${computerChoice} beats ${humanChoice}`)
    } 
    else if (humanChoice === "PAPER" && computerChoice === "ROCK") {
+      humanScore++;
       console.log(`You win, ${humanChoice} beats ${computerChoice}`)
    } else if(humanChoice === "ROCK" && computerChoice === "PAPER")  {
+      computerScore++;
       console.log(`You lose, ${computerChoice} beats ${humanChoice}`)
    }
    else if (humanChoice === "SCISSORS" && computerChoice === "PAPER") {
+      humanScore++;
       console.log(`You win, ${humanChoice} beats ${computerChoice}`);
    } else if (humanChoice === "PAPER" && computerChoice === "SCISSORS"){
+      computerScore++;
       console.log(`You lose, ${computerChoice} beats ${humanChoice}`)
    }
    else if(humanChoice === computerChoice){
@@ -45,9 +51,20 @@ function playRound(humanChoice, computerChoice) {
    }
 }
    
-   
+ 
 
-let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+
+// playRound(humanSelection, computerSelection);
+// console.log(`Human Score ${humanScore} : ${computerScore} Computer Score`)
+
+function playGame() {
+   for(let i = 0; i < 5; i++) {
+      let humanSelection = getHumanChoice();
+      let computerSelection = getComputerChoice();
+      playRound(humanSelection, computerSelection);
+   }
+   console.log(`Human Score ${humanScore} : ${computerScore} Computer Score`);
+}
+
+playGame()
