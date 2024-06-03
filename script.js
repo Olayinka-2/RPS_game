@@ -2,7 +2,6 @@ function getComputerChoice(){
    let option = ["ROCK", "PAPER", "SCISSORS"];
    return option[Math.ceil(Math.random() * 3) - 1]
 }
-// console.log(getComputerChoice())
 
 function getHumanChoice(){
    let choice = prompt("Input your choice here. ").toUpperCase();
@@ -17,7 +16,6 @@ function getHumanChoice(){
    }
 }
 
-// console.log(getHumanChoice())
 
 let humanScore = 0;
 let computerScore = 0;
@@ -50,13 +48,6 @@ function playRound(humanChoice, computerChoice) {
       console.log(`invalid input`)
    }
 }
-   
- 
-
-
-
-// playRound(humanSelection, computerSelection);
-// console.log(`Human Score ${humanScore} : ${computerScore} Computer Score`)
 
 function playGame() {
    for(let i = 0; i < 5; i++) {
