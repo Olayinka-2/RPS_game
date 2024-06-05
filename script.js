@@ -3,19 +3,6 @@ function getComputerChoice(){
    return option[ Math.ceil(Math.random() * 3) - 1 ]
 }
 
-function getHumanChoice(){
-   let choice = prompt("Input your choice here. ").toUpperCase();
-
-   if(choice === "ROCK" ||
-      choice === "PAPER" ||
-      choice === "SCISSORS"
-   ) {
-      return choice
-   } else {
-      return "Input the right choice"
-   }
-}
-
 
 let humanScore = 0;
 let computerScore = 0;
@@ -23,39 +10,57 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice) {
    if (humanChoice === "ROCK" && computerChoice === "SCISSORS") {
       humanScore++;
-      console.log("You win, Rock beat Scissors");
+      playerParagraph.textContent = "You win, Rock beat Scissors";
    } else if(humanChoice === "SCISSORS" && computerChoice === "ROCK"){
       computerScore++;
-      console.log(`You lose, ${computerChoice} beats ${humanChoice}`)
+      playerParagraph.textContent = `You lose, ${computerChoice} beats ${humanChoice}`;
    } 
    else if (humanChoice === "PAPER" && computerChoice === "ROCK") {
       humanScore++;
-      console.log(`You win, ${humanChoice} beats ${computerChoice}`)
+      playerParagraph.textContent = `You win, ${humanChoice} beats ${computerChoice}`;
    } else if(humanChoice === "ROCK" && computerChoice === "PAPER")  {
       computerScore++;
-      console.log(`You lose, ${computerChoice} beats ${humanChoice}`)
+      playerParagraph.textContent = `You lose, ${computerChoice} beats ${humanChoice}`;
    }
    else if (humanChoice === "SCISSORS" && computerChoice === "PAPER") {
       humanScore++;
-      console.log(`You win, ${humanChoice} beats ${computerChoice}`);
+      playerParagraph.textContent = `You win, ${humanChoice} beats ${computerChoice}`;
    } else if (humanChoice === "PAPER" && computerChoice === "SCISSORS"){
       computerScore++;
-      console.log(`You lose, ${computerChoice} beats ${humanChoice}`)
+      playerParagraph.textContent = `You lose, ${computerChoice} beats ${humanChoice}`;
    }
    else if(humanChoice === computerChoice){
-      console.log(`Its a draw`)
+      playerParagraph.textContent = `Its a draw`;
    } else {
-      console.log(`invalid input`)
+      playerParagraph.textContent = `invalid input`;
    }
 }
 
-function playGame() {
-   for(let i = 0; i < 5; i++) {
-      let humanSelection = getHumanChoice();
-      let computerSelection = getComputerChoice();
-      playRound(humanSelection, computerSelection);
-   }
-   console.log(`Human Score ${humanScore} : ${computerScore} Computer Score`);
+const gameButtons = document.querySelectorAll("button");
+
+gameButtons.forEach((button) => {
+   button.addEventListener("click", () => {
+      playRound(button.textContent, getComputerChoice());
+      scoreParagraph.textContent = `Human Score ${humanScore} : ${computerScore} Computer Score`;
+   
+      if(humanScore === 5 ) {
+         winnerParagraph.textContent = `Congratulations, you are  the winner of the game`;
+         restartGame();
+      } else if(computerScore === 5){
+         winnerParagraph.textContent = `Ouch, you lost the game`;
+         restartGame();
+      }
+   });
+})
+
+
+function restartGame() {
+   humanScore = 0;
+   computerScore = 0;
+
 }
 
-playGame()
+let playerParagraph = document.querySelector(".player");
+let scoreParagraph = document.querySelector(".score");
+
+let winnerParagraph = document.querySelector("h3");
