@@ -1,6 +1,6 @@
 function getComputerChoice(){
    let option = ["ROCK", "PAPER", "SCISSORS"];
-   return option[Math.ceil(Math.random() * 3) - 1]
+   return option[ Math.ceil(Math.random() * 3) - 1 ]
 }
 
 function getHumanChoice(){
