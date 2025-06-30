@@ -2,6 +2,7 @@ import bgtriangle from "./assets/bg-triangle.svg"
 import iconRock from "./assets/icon-rock.svg";
 import iconPaper from "./assets/icon-paper.svg";
 import iconScissors from "./assets/icon-scissors.svg";
+import Modal from "./components/Modal";
 
 
 function App() {
@@ -44,10 +45,15 @@ function App() {
           </div>
           </div>
         </div>
+        <div className="game-footer">
+          <button>Rules</button>
+          <button>Start</button>
+        </div>
       </main>
       <div>
       </div>
     </div>
+    <Modal />
     </>
   )
 }
