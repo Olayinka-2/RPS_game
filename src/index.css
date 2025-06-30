@@ -148,7 +148,7 @@ main {
 /* Modal Part */
 
 .modal {
-  display: block;
+  display: none;
   position: fixed;
   z-index: 1000;
   left: 0;

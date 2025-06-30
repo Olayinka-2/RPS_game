@@ -3,9 +3,16 @@ import iconRock from "./assets/icon-rock.svg";
 import iconPaper from "./assets/icon-paper.svg";
 import iconScissors from "./assets/icon-scissors.svg";
 import Modal from "./components/Modal";
+import { useRef } from "react";
 
 
 function App() {
+  const modalTarget = useRef(null);
+
+  const handleClick = () => {
+    modalTarget.current.style.display = "block"
+  }
+
 
   return (
     <>
@@ -46,14 +53,14 @@ function App() {
           </div>
         </div>
         <div className="game-footer">
-          <button>Rules</button>
+          <button  onClick={handleClick}>Rules</button>
           <button>Start</button>
         </div>
       </main>
       <div>
       </div>
     </div>
-    <Modal />
+    <Modal modalTarget={modalTarget} />
     </>
   )
 }
