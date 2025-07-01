@@ -1,61 +1,28 @@
-import bgtriangle from "./assets/bg-triangle.svg"
-import iconRock from "./assets/icon-rock.svg";
-import iconPaper from "./assets/icon-paper.svg";
-import iconScissors from "./assets/icon-scissors.svg";
+import MainPlayerItem from "./components/MainPlayer";
 import Modal from "./components/Modal";
+import Header from "./components/Header";
+import Footer from "./components/GameFooter";
+import GameField from "./components/GameField";
 import { useRef } from "react";
+
 
 
 function App() {
   const modalTarget = useRef(null);
-
-  const handleClick = () => {
-    modalTarget.current.style.display = "block"
-  }
-
+  const gameFieldDisplay = useRef(null);
+  const playerItemDisplay = useRef(null);
 
   return (
     <>
     <div className="game-container">
-      <header>
-        <div className="game-header">
-          <div className="item-title">
-            <p>ROCK</p>
-            <p>PAPER</p>
-            <p>SCISSORS</p>
-          </div>
-          <div className="score">
-            <p>SCORE</p>
-            <p>12</p>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main>
         <div className="game-body">
-          <div className="game-items">
-          <img src={bgtriangle} alt="bg-pentagon" />
-          <div className="iconRock border">
-            <div >
-              <img src={iconRock} alt="icon rock"/>
-            </div>
-          </div>
-          <div className="iconPaper border">
-            <div >
-              <img src={iconPaper} alt="icon paper" />
-            </div>
-          </div>
-          <div className="iconScissors border">
-            <div >
-              <img src={iconScissors} alt="icon scissors"  className="man"/>
-            </div>
-          </div>
-          </div>
+          <MainPlayerItem gameFieldDisplay={gameFieldDisplay} playerItemDisplay={playerItemDisplay}/>
+          <GameField gameFieldDisplay={gameFieldDisplay} />
         </div>
-        <div className="game-footer">
-          <button  onClick={handleClick}>Rules</button>
-          <button>Start</button>
-        </div>
+        <Footer modalTarget={modalTarget} />
       </main>
       <div>
       </div>

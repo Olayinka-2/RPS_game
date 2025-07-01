@@ -184,3 +184,52 @@ main {
 .modal-content img {
   width: 100%;
 }
+
+/* Attack field */
+
+.game-field {
+  display: none;
+  justify-content: space-between;
+}
+
+.player1, .player2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  gap: 4rem;
+}
+
+.player1-border, .player2-border{
+  width: 32rem;
+  height: 32rem;
+  background-color: rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  padding: 3rem;
+}
+/* 
+.player1-border {
+  background: var(--Paper-Gradient);
+} */
+
+.player1-border div, .player2-border div {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.player1-border div img, .player2-border div img {
+  width: 100%;
+  height: 100%;
+
+}
+
+.text {
+  font-size: 4rem;
+  font-weight: 600;
+}
