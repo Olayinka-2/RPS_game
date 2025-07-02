@@ -263,10 +263,70 @@ main {
   border:2px solid white;
   border-radius: 2rem;
   cursor: pointer;
+  margin-top: 1.5rem;
 }
 
 .play-again:hover {
   border: 2px solid #fff;
   color: #fff;
   background-color: var(--Radial-Gradient);
+}
+
+@media screen and (max-width: 768px) {
+  header, main {
+    width: 100%;
+  }
+
+  .game-header {
+    font-size: 1.8rem;
+  }
+
+  .score {
+    padding: .4rem;
+  }
+
+  .game-items  {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .game-items img {
+    width: 100%;
+  }
+
+  .game-items .border {
+    width: 11rem;
+    height: 11rem;
+
+  }
+
+  .border div {
+    padding: 2rem;
+  }
+
+  .player1-border, .player2-border{
+    width: 12rem;
+    height: 12rem;
+    padding:  1rem;
+  }
+
+  .player1, .player2 {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .game-field {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .modal-content {
+    width: 100%;
+    height: 100%;
+  }
 }
