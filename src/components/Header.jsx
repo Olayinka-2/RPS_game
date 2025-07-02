@@ -1,4 +1,4 @@
-export default function Header() {
+export default function Header({scoreDispaly, score}) {
   return (
     <>
       <header>
@@ -10,7 +10,7 @@ export default function Header() {
           </div>
           <div className="score">
             <p>SCORE</p>
-            <p>0</p>
+            <p  ref={scoreDispaly}>{score}</p>
           </div>
         </div>
       </header>

@@ -16,7 +16,6 @@ export default function MainPlayerItem({gameFieldDisplay, playerItemDisplay, set
       setSelectedImage(selectedItem, setClickPlayerImage);
       setSelectedImage(houseItem, setHousePick)
     }
-
   }
 
 

@@ -1,6 +1,6 @@
 export default function Footer({modalTarget}) {
   const handleClick = () => {
-    modalTarget.current.style.display = "block"
+    modalTarget.current.style.display = "flex"
   }
 
   return (

@@ -7,10 +7,7 @@ export default function Winner({ housePick, clickPlayerImage, gameFieldDisplay, 
   const winnerSection = useRef(null);
 
   function handleClickForReplay() {
-    winnerSection.current.style.display = "none";
-   gameFieldDisplay.current.style.display = "none";
-   playerItemDisplay.current.style.display = "flex";
-   resetGame(setFunctions.setClickPlayerImage, setFunctions.setHousePick);
+   resetGame(setFunctions.setClickPlayerImage, setFunctions.setHousePick, winnerSection,  gameFieldDisplay, playerItemDisplay );
   }
 
   useEffect(() => {
@@ -24,12 +21,13 @@ export default function Winner({ housePick, clickPlayerImage, gameFieldDisplay, 
 
         if (winner === "mainPlayer") {
           winnerText.current.textContent = "You win";
+          setFunctions.setScore(prev => prev + 1)
         } else if (winner === "house") {
           winnerText.current.textContent = "You lose";
+          setFunctions.setScore(prev => prev - 1)
         } else if(winner === "draw") {
           winnerText.current.textContent = "It's a draw";
         }
-        console.log(winner)
       }
     }, 1500)
 

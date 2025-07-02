@@ -13,16 +13,18 @@ function App() {
   const modalTarget = useRef(null);
   const gameFieldDisplay = useRef(null);
   const playerItemDisplay = useRef(null);
+  const scoreDispaly = useRef(null);
 
 
   const [clickPlayerImage, setClickPlayerImage] = useState({element: null, id:null});
   const [housePick, setHousePick] = useState({element: null, id:null});
+  let [score, setScore] = useState(0);
 
 
   return (
     <>
     <div className="game-container">
-      <Header />
+      <Header scoreDispaly = {scoreDispaly } score = {score}/>
 
       <main>
         <div className="game-body">
@@ -43,12 +45,11 @@ function App() {
           clickPlayerImage = {clickPlayerImage}
           gameFieldDisplay={gameFieldDisplay}
           playerItemDisplay={playerItemDisplay}
-          setFunctions = {{setHousePick, setClickPlayerImage}}  />
-
-        <Footer modalTarget={modalTarget} />
+          setFunctions = {{setHousePick, setClickPlayerImage, setScore}}  />
       </main>
-      <div>
-      </div>
+      <footer>
+        <Footer modalTarget={modalTarget} />
+      </footer>
     </div>
     <Modal modalTarget={modalTarget} />
     </>
