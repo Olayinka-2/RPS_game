@@ -208,10 +208,16 @@ main {
   border-radius: 50%;
   padding: 3rem;
 }
-/* 
-.player1-border {
+
+.player1-border-Paper {
   background: var(--Paper-Gradient);
-} */
+}
+.player1-border-Rock {
+  background: var(--Rock-Gradient);
+}
+.player1-border-Scissors {
+  background: var(--Scissors-Gradient);
+}
 
 .player1-border div, .player2-border div {
   background: #fff;

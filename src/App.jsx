@@ -3,7 +3,7 @@ import Modal from "./components/Modal";
 import Header from "./components/Header";
 import Footer from "./components/GameFooter";
 import GameField from "./components/GameField";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 
 
@@ -12,6 +12,11 @@ function App() {
   const gameFieldDisplay = useRef(null);
   const playerItemDisplay = useRef(null);
 
+
+  const [clickPlayerImage, setClickPlayerImage] = useState({element: null, id:null});
+  const [housePick, setHousePick] = useState({element: null, id:null});
+
+
   return (
     <>
     <div className="game-container">
@@ -19,8 +24,17 @@ function App() {
 
       <main>
         <div className="game-body">
-          <MainPlayerItem gameFieldDisplay={gameFieldDisplay} playerItemDisplay={playerItemDisplay}/>
-          <GameField gameFieldDisplay={gameFieldDisplay} />
+          <MainPlayerItem
+            gameFieldDisplay={gameFieldDisplay}
+            playerItemDisplay={playerItemDisplay}
+            setClickPlayerImage = { setClickPlayerImage}
+            setHousePick = { setHousePick }  />
+
+          <GameField
+            gameFieldDisplay={gameFieldDisplay}
+            clickPlayerImage = {clickPlayerImage}
+            housePick = {housePick}
+            />
         </div>
         <Footer modalTarget={modalTarget} />
       </main>
