@@ -48,7 +48,7 @@ export default function GameField({ gameFieldDisplay, clickPlayerImage, housePic
         <div className="player2-border" ref={player2borderColor}>
           {housePick.element}
         </div>
-        <div className="text" id="Player2-text">The House Picked</div>
+        <div className="text" id="Player2-text">{`The House Picked ${housePick.id}`}</div>
       </div>
     </div>
   );
