@@ -209,13 +209,13 @@ main {
   padding: 3rem;
 }
 
-.player1-border-Paper {
+.player-border-Paper {
   background: var(--Paper-Gradient);
 }
-.player1-border-Rock {
+.player-border-Rock {
   background: var(--Rock-Gradient);
 }
-.player1-border-Scissors {
+.player-border-Scissors {
   background: var(--Scissors-Gradient);
 }
 
@@ -238,4 +238,31 @@ main {
 .text {
   font-size: 4rem;
   font-weight: 600;
+}
+
+/* winner-section */
+
+.winner-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+}
+
+
+.winner-text {
+  font-size: 14rem;
+  color: #fff;
+  margin-bottom: 3rem;
+}
+
+.play-again {
+  padding: 3rem 14rem;
+  font-size: 5rem;
+  background: #fff;
+  color: var(--Dark-Text);
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2rem;
 }

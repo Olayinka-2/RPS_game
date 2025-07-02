@@ -3,6 +3,8 @@ import Modal from "./components/Modal";
 import Header from "./components/Header";
 import Footer from "./components/GameFooter";
 import GameField from "./components/GameField";
+import Winner from "./components/Winner";
+
 import { useRef, useState } from "react";
 
 
@@ -36,6 +38,13 @@ function App() {
             housePick = {housePick}
             />
         </div>
+        <Winner
+          housePick = {housePick}
+          clickPlayerImage = {clickPlayerImage}
+          gameFieldDisplay={gameFieldDisplay}
+          playerItemDisplay={playerItemDisplay}
+          setFunctions = {{setHousePick, setClickPlayerImage}}  />
+
         <Footer modalTarget={modalTarget} />
       </main>
       <div>

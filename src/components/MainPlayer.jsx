@@ -10,14 +10,15 @@ export default function MainPlayerItem({gameFieldDisplay, playerItemDisplay, set
     playerItemDisplay.current.style.display = "none"
 
     const selectedItem = event.currentTarget.dataset.item;
+    let houseItem = getHouseItem();
 
     if(selectedItem) {
       setSelectedImage(selectedItem, setClickPlayerImage);
-      setSelectedImage(getHouseItem(), setHousePick)
+      setSelectedImage(houseItem, setHousePick)
     }
 
-
   }
+
 
   return (
     <>
@@ -85,5 +86,3 @@ function getHouseItem() {
   const randomIndex = Math.floor(Math.random() * items.length);
   return items[randomIndex];
 }
-
-

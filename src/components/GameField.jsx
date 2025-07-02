@@ -7,12 +7,14 @@ export default function GameField({gameFieldDisplay, clickPlayerImage, housePick
   const player1borderColor = useRef(null);
   const player2borderColor = useRef(null);
 
+  console.log(clickPlayerImage, housePick)
+
   useEffect(() => {
     if (player1borderColor.current) {
-      player1borderColor.current.classList.add(`player1-border-${clickPlayerImage.id}`);
+      player1borderColor.current.classList.add(`player-border-${clickPlayerImage.id}`);
     }
     if(player2borderColor.current) {
-      player2borderColor.current.classList.add(`player1-border-${housePick.id}`);
+      player2borderColor.current.classList.add(`player-border-${housePick.id}`);
     }
   }, [clickPlayerImage]);
 
